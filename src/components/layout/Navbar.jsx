@@ -41,7 +41,7 @@ function Navbar() {
 
         <div className="flex items-center gap-3">
           <img
-            src="https://ui-avatars.com/api/?name=Sayan+Das&background=2563eb&color=fff"
+            src="https://ui-avatars.com/api/?name=Sayan+Ad&background=2563eb&color=fff"
             alt="Profile"
             className="w-11 h-11 rounded-full"
           />
@@ -49,7 +49,7 @@ function Navbar() {
           <div className="hidden lg:block">
             <h3 className="font-semibold text-slate-800">Sayan Das</h3>
 
-            <p className="text-sm text-slate-500">Room A-204</p>
+            <p className="text-sm text-slate-500">Room B-19</p>
           </div>
         </div>
       </div>

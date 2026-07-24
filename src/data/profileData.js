@@ -1,12 +1,12 @@
 export const profileData = {
-    name: "Sayan Das",
+    name: "Sayan Adhikary",
     email: "sayan@example.com",
     phone: "+91 9876543210",
-    room: "A-204",
-    hostel: "Sunrise Boys Hostel",
+    room: "B-19",
+    hostel: "Naveen Mansion",
     college: "XYZ Institute of Technology",
     course: "B.Tech - Computer Science",
     emergencyContact: "+91 9123456789",
     avatar:
-        "https://ui-avatars.com/api/?name=Sayan+Das&background=2563eb&color=fff&size=256",
+        "https://ui-avatars.com/api/?name=Sayan+Ad&background=2563eb&color=fff&size=256",
 };
