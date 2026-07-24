@@ -1,29 +1,22 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { CheckCircle2, Circle, Plus, Trash2 } from "lucide-react";
+import { taskData } from "../../data/taskData";
 
 function TaskCard() {
-  const [tasks, setTasks] = useState([
-    {
-      id: 1,
-      title: "Pay Hostel Rent",
-      completed: false,
-    },
-    {
-      id: 2,
-      title: "Wash Clothes",
-      completed: true,
-    },
-    {
-      id: 3,
-      title: "Buy Groceries",
-      completed: false,
-    },
-  ]);
+  const [tasks, setTasks] = useState(() => {
+    const savedTasks = localStorage.getItem("tasks");
+
+    return savedTasks ? JSON.parse(savedTasks) : taskData;
+  });
 
   const [newTask, setNewTask] = useState("");
 
+  useEffect(() => {
+    localStorage.setItem("tasks", JSON.stringify(tasks));
+  }, [tasks]);
+
   const addTask = () => {
-    if (newTask.trim() === "") return;
+    if (!newTask.trim()) return;
 
     const task = {
       id: Date.now(),
@@ -38,7 +31,12 @@ function TaskCard() {
   const toggleTask = (id) => {
     setTasks(
       tasks.map((task) =>
-        task.id === id ? { ...task, completed: !task.completed } : task,
+        task.id === id
+          ? {
+              ...task,
+              completed: !task.completed,
+            }
+          : task,
       ),
     );
   };
@@ -62,7 +60,7 @@ function TaskCard() {
 
         <button
           onClick={addTask}
-          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl transition"
+          className="bg-blue-600 hover:bg-blue-700 text-white p-3 rounded-xl"
         >
           <Plus size={20} />
         </button>
@@ -72,24 +70,20 @@ function TaskCard() {
         {tasks.map((task) => (
           <div
             key={task.id}
-            className="flex items-center justify-between border rounded-xl p-3 hover:bg-slate-50 transition"
+            className="flex justify-between items-center border rounded-xl p-3"
           >
             <div
               onClick={() => toggleTask(task.id)}
               className="flex items-center gap-3 cursor-pointer flex-1"
             >
               {task.completed ? (
-                <CheckCircle2 size={22} className="text-green-600" />
+                <CheckCircle2 className="text-green-600" />
               ) : (
-                <Circle size={22} className="text-gray-400" />
+                <Circle className="text-gray-400" />
               )}
 
               <span
-                className={
-                  task.completed
-                    ? "line-through text-gray-400"
-                    : "text-gray-800"
-                }
+                className={task.completed ? "line-through text-gray-400" : ""}
               >
                 {task.title}
               </span>
@@ -97,16 +91,12 @@ function TaskCard() {
 
             <button
               onClick={() => deleteTask(task.id)}
-              className="text-red-500 hover:text-red-700"
+              className="text-red-500"
             >
               <Trash2 size={18} />
             </button>
           </div>
         ))}
-
-        {tasks.length === 0 && (
-          <p className="text-center text-slate-500 py-6">No tasks available.</p>
-        )}
       </div>
     </div>
   );
