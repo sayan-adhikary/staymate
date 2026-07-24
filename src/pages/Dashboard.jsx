@@ -2,6 +2,7 @@ import React from "react";
 import StatCard from "../components/dashboard/StatCard.jsx";
 import MenuCard from "../components/dashboard/MenuCard.jsx";
 import NoticeCard from "../components/dashboard/NoticeCard.jsx";
+import TaskCard from "../components/dashboard/TaskCard.jsx";
 import { stats } from "../data/statData.js";
 
 function Dashboard() {
@@ -39,11 +40,20 @@ function Dashboard() {
           />
         ))}
       </div>
-      <div className="mt-8">
+      {/* <div className="mt-8">
         <MenuCard />
       </div>
       <div className="mt-8">
         <NoticeCard />
+      </div> */}
+
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
+        <MenuCard />
+        <NoticeCard />
+      </div>
+
+      <div className="mt-6">
+        <TaskCard />
       </div>
     </>
   );
