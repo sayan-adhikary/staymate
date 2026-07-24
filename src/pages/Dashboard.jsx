@@ -2,6 +2,7 @@ import React from "react";
 import { CircleAlert, Wallet, IndianRupee, CheckSquare } from "lucide-react";
 import StatCard from "../components/dashboard/StatCard.jsx";
 import MenuCard from "../components/dashboard/MenuCard.jsx";
+import NoticeCard from "../components/dashboard/NoticeCard.jsx";
 
 function Dashboard() {
   //rendaring the page
@@ -66,8 +67,12 @@ function Dashboard() {
           />
         ))}
       </div>
-
-      <MenuCard />
+      <div className="mt-8">
+        <MenuCard />
+      </div>
+      <div className="mt-8">
+        <NoticeCard />
+      </div>
     </>
   );
 }
