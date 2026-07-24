@@ -1,75 +1,153 @@
-import { Bell, Moon, Globe, ShieldCheck } from "lucide-react";
+import { useState } from "react";
+import {
+  Bell,
+  Moon,
+  Globe,
+  ShieldCheck,
+  User,
+  Lock,
+  ChevronRight,
+} from "lucide-react";
 import { useTheme } from "../context/ThemeContext";
 
 function Settings() {
   const { darkMode, toggleTheme } = useTheme();
 
+  const [notifications, setNotifications] = useState(true);
+  const [emailUpdates, setEmailUpdates] = useState(false);
+
   return (
     <div className="space-y-8">
-      <div>
-        <h1 className="text-3xl font-bold dark:text-white">⚙️ Settings</h1>
+      {/* Header */}
 
-        <p className="text-slate-500 dark:text-slate-400 mt-2">
-          Customize your StayMate experience.
+      <div>
+        <h1 className="text-4xl font-bold">Settings</h1>
+
+        <p className="text-slate-500 mt-2">
+          Manage your account preferences and application settings.
         </p>
       </div>
 
-      <div className="bg-white dark:bg-slate-900 rounded-2xl shadow-sm divide-y dark:divide-slate-700">
-        <div className="flex justify-between items-center p-6">
-          <div className="flex items-center gap-4">
-            <Bell className="text-blue-600" />
-            <div>
-              <h2 className="font-semibold dark:text-white">Notifications</h2>
+      {/* Account */}
 
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                Receive hostel updates
+      <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div className="border-b p-5">
+          <h2 className="text-xl font-semibold">Account</h2>
+        </div>
+
+        <button className="w-full flex justify-between items-center px-6 py-5 hover:bg-slate-50 transition">
+          <div className="flex items-center gap-4">
+            <User className="text-blue-600" />
+
+            <div className="text-left">
+              <h3 className="font-medium">Edit Profile</h3>
+
+              <p className="text-sm text-slate-500">
+                Update your personal information
               </p>
             </div>
           </div>
 
-          <input type="checkbox" defaultChecked />
-        </div>
+          <ChevronRight />
+        </button>
 
-        <div className="flex justify-between items-center p-6">
+        <button className="w-full flex justify-between items-center px-6 py-5 hover:bg-slate-50 transition">
           <div className="flex items-center gap-4">
-            <Moon className="text-indigo-600" />
-            <div>
-              <h2 className="font-semibold dark:text-white">Dark Mode</h2>
+            <Lock className="text-red-500" />
 
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                Toggle application theme
+            <div className="text-left">
+              <h3 className="font-medium">Change Password</h3>
+
+              <p className="text-sm text-slate-500">
+                Update your account password
               </p>
             </div>
           </div>
 
-          <input type="checkbox" checked={darkMode} onChange={toggleTheme} />
+          <ChevronRight />
+        </button>
+      </div>
+
+      {/* Preferences */}
+
+      <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div className="border-b p-5">
+          <h2 className="text-xl font-semibold">Preferences</h2>
         </div>
 
-        <div className="flex justify-between items-center p-6">
+        {/* {Notification} */}
+        
+        <div className="flex justify-between items-center px-6 py-5 border-t">
+          <div className="flex items-center gap-4">
+            <Bell className="text-yellow-500" />
+
+            <div>
+              <h3 className="font-medium">Notifications</h3>
+
+              <p className="text-sm text-slate-500">
+                Enable hostel notifications
+              </p>
+            </div>
+          </div>
+
+          <input
+            type="checkbox"
+            checked={notifications}
+            onChange={() => setNotifications(!notifications)}
+            className="w-5 h-5"
+          />
+        </div>
+
+        <div className="flex justify-between items-center px-6 py-5 border-t">
           <div className="flex items-center gap-4">
             <Globe className="text-green-600" />
-            <div>
-              <h2 className="font-semibold dark:text-white">Language</h2>
 
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                English
-              </p>
+            <div>
+              <h3 className="font-medium">Email Updates</h3>
+
+              <p className="text-sm text-slate-500">Receive important emails</p>
             </div>
           </div>
+
+          <input
+            type="checkbox"
+            checked={emailUpdates}
+            onChange={() => setEmailUpdates(!emailUpdates)}
+            className="w-5 h-5"
+          />
+        </div>
+      </div>
+
+      {/* Privacy */}
+
+      <div className="bg-white rounded-2xl shadow-sm overflow-hidden">
+        <div className="border-b p-5">
+          <h2 className="text-xl font-semibold">Privacy & Security</h2>
         </div>
 
-        <div className="flex justify-between items-center p-6">
+        <button className="w-full flex justify-between items-center px-6 py-5 hover:bg-slate-50 transition">
           <div className="flex items-center gap-4">
-            <ShieldCheck className="text-red-600" />
-            <div>
-              <h2 className="font-semibold dark:text-white">Privacy</h2>
+            <ShieldCheck className="text-emerald-600" />
 
-              <p className="text-sm text-slate-500 dark:text-slate-400">
-                Manage account security
+            <div className="text-left">
+              <h3 className="font-medium">Privacy Settings</h3>
+
+              <p className="text-sm text-slate-500">
+                Manage your privacy preferences
               </p>
             </div>
           </div>
-        </div>
+
+          <ChevronRight />
+        </button>
+      </div>
+
+      {/* Logout */}
+
+      <div className="flex justify-end">
+        <button className="px-6 py-3 bg-red-600 hover:bg-red-700 text-white rounded-xl transition">
+          Logout
+        </button>
       </div>
     </div>
   );
