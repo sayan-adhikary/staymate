@@ -1,11 +1,18 @@
+import { Menu } from "lucide-react";
 import React from "react";
 
 function Navbar() {
   return (
-    <nav className="justify-between">
-      <div className="flex">Left </div>
-      <div className="flex">Center </div>
-      <div className="flex">Right </div>
+    <nav class="flex items-center justify-between bg-white shadow px-6 h-16">
+      <div>
+        <Menu />{" "}
+      </div>
+      <div>🔍 Search...</div>
+      <div className="flex">
+        <ul>🔔</ul>
+        <ul>🌙</ul>
+        <ul>👤</ul>
+      </div>
     </nav>
   );
 }
