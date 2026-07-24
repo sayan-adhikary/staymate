@@ -1,61 +1,108 @@
-import React from "react";
-import StatCard from "../components/dashboard/StatCard.jsx";
-import MenuCard from "../components/dashboard/MenuCard.jsx";
-import NoticeCard from "../components/dashboard/NoticeCard.jsx";
-import TaskCard from "../components/dashboard/TaskCard.jsx";
-import { stats } from "../data/statData.js";
+import StatCard from "../components/dashboard/StatCard";
+import MenuCard from "../components/dashboard/MenuCard";
+import NoticeCard from "../components/dashboard/NoticeCard";
+import TaskCard from "../components/dashboard/TaskCard";
+import { stats } from "../data/statData";
 
 function Dashboard() {
-  //rendaring the page
-  const hour = new Date().getHours();
-
-  let greeting = "";
-
-  if (hour >= 5 && hour < 12) {
-    greeting = "Good Morning";
-  } else if (hour >= 12 && hour < 17) {
-    greeting = "Good Afternoon";
-  } else if (hour >= 17 && hour < 21) {
-    greeting = "Good Evening";
-  } else {
-    greeting = "Good Night";
-  }
-
   return (
-    <>
-      <div className="mb-8">
-        <h1 className="text-4xl md:text-5xl font-bold">{greeting}</h1>
-        <p className="text-slate-500 mt-2">Welcome back, Sayan!</p>
-        <p className="text-slate-500">Manage your hostel life efficiently.</p>
-      </div>
-      {/* Stats Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
-        {stats.map((item) => (
-          <StatCard
-            key={item.title}
-            title={item.title}
-            value={item.value}
-            color={item.color}
-            icon={item.icon}
-          />
-        ))}
-      </div>
-      {/* <div className="mt-8">
-        <MenuCard />
-      </div>
-      <div className="mt-8">
-        <NoticeCard />
-      </div> */}
+    <div className="space-y-8">
+      {/* Header */}
 
-      <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 mt-8">
-        <MenuCard />
-        <NoticeCard />
+      <div>
+        <h1 className="text-4xl font-bold text-slate-800">
+          Dashboard
+        </h1>
+
+        <p className="text-slate-500 mt-2">
+          Welcome to StayMate. Here's everything happening today.
+        </p>
       </div>
 
-      <div className="mt-6">
+      {/* Stats */}
+
+      <section>
+        <div className="grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-6">
+          {stats.map((stat) => (
+            <StatCard
+              key={stat.id}
+              title={stat.title}
+              value={stat.value}
+              icon={stat.icon}
+              color={stat.color}
+            />
+          ))}
+        </div>
+      </section>
+
+      {/* Main Grid */}
+
+      <section className="grid grid-cols-1 xl:grid-cols-3 gap-6">
+
+        <div className="xl:col-span-2">
+          <MenuCard />
+        </div>
+
+        <div>
+          <NoticeCard />
+        </div>
+
+      </section>
+
+      {/* Tasks */}
+
+      <section>
         <TaskCard />
-      </div>
-    </>
+      </section>
+
+      {/* Quick Summary */}
+
+      <section className="grid grid-cols-1 md:grid-cols-3 gap-6">
+
+        <div className="bg-gradient-to-r from-blue-600 to-blue-500 text-white rounded-2xl p-6 shadow">
+          <h2 className="text-lg font-semibold">
+            Monthly Rent
+          </h2>
+
+          <h1 className="text-4xl font-bold mt-4">
+            ₹6000
+          </h1>
+
+          <p className="mt-2 text-blue-100">
+            Due on 5th of every month
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-r from-green-600 to-green-500 text-white rounded-2xl p-6 shadow">
+          <h2 className="text-lg font-semibold">
+            Pending Tasks
+          </h2>
+
+          <h1 className="text-4xl font-bold mt-4">
+            3
+          </h1>
+
+          <p className="mt-2 text-green-100">
+            Complete today's checklist
+          </p>
+        </div>
+
+        <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white rounded-2xl p-6 shadow">
+          <h2 className="text-lg font-semibold">
+            Complaints
+          </h2>
+
+          <h1 className="text-4xl font-bold mt-4">
+            2
+          </h1>
+
+          <p className="mt-2 text-orange-100">
+            Pending hostel issues
+          </p>
+        </div>
+
+      </section>
+    </div>
   );
 }
 

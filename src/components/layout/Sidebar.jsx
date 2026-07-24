@@ -1,101 +1,95 @@
-import React from "react";
 import {
   LayoutDashboard,
-  UtensilsCrossed,
-  CircleAlert,
+  Utensils,
+  TriangleAlert,
   Wallet,
-  IndianRupee,
+  House,
   Bell,
   CheckSquare,
   User,
   Settings,
-  House,
 } from "lucide-react";
 import { NavLink } from "react-router-dom";
 
-const menuItems = [
+const navLinks = [
   {
     name: "Dashboard",
-    icon: LayoutDashboard,
     path: "/",
+    icon: LayoutDashboard,
   },
   {
-    name: "Food Menu",
-    icon: UtensilsCrossed,
+    name: "Food",
     path: "/food",
+    icon: Utensils,
   },
   {
     name: "Complaints",
-    icon: CircleAlert,
     path: "/complaints",
+    icon: TriangleAlert,
   },
   {
     name: "Expenses",
-    icon: Wallet,
     path: "/expenses",
+    icon: Wallet,
   },
   {
     name: "Rent",
-    icon: IndianRupee,
     path: "/rent",
+    icon: House,
   },
   {
-    name: "Notice Board",
-    icon: Bell,
+    name: "Notice",
     path: "/notice",
+    icon: Bell,
   },
   {
     name: "Tasks",
-    icon: CheckSquare,
     path: "/tasks",
+    icon: CheckSquare,
   },
   {
     name: "Profile",
-    icon: User,
     path: "/profile",
+    icon: User,
   },
   {
     name: "Settings",
-    icon: Settings,
     path: "/settings",
+    icon: Settings,
   },
 ];
 
 function Sidebar() {
   return (
-    <aside className="w-64 min-h-screen bg-slate-900 text-white flex flex-col">
-      {/* Logo */}
-      <div className="p-6 text-2xl font-bold">
-        <div className="flex items-center gap-2 p-6 text-2xl font-bold">
-          <House />
-          <span>StayMate</span>
-        </div>
+    <aside className="w-72 min-h-screen bg-white border-r border-slate-200 sticky top-0">
+      <div className="p-8 border-b">
+        <h1 className="text-3xl font-bold text-blue-600">StayMate</h1>
+
+        <p className="text-sm text-slate-500 mt-1">Smart Hostel Companion</p>
       </div>
 
-      {/* Menu */}
-      <div className="px-4 space-y-2">
-        {menuItems.map((item) => {
-          const Icon = item.icon;
+      <nav className="p-4 space-y-2">
+        {navLinks.map((link) => {
+          const Icon = link.icon;
 
           return (
             <NavLink
+              key={link.name}
+              to={link.path}
               className={({ isActive }) =>
-                `flex items-center gap-3 p-3 rounded-lg transition ${
-                  isActive ? "bg-blue-600 text-white" : "hover:bg-slate-700"
+                `flex items-center gap-4 px-4 py-3 rounded-xl transition-all duration-200 ${
+                  isActive
+                    ? "bg-blue-600 text-white shadow-md"
+                    : "text-slate-600 hover:bg-slate-100 hover:text-blue-600"
                 }`
               }
-              key={item.name}
-              to={item.path}
             >
               <Icon size={20} />
-              <span>{item.name}</span>
+              <span className="font-medium">{link.name}</span>
             </NavLink>
           );
         })}
-      </div>
-
-      {/* Version */}
-      <div className="mt-auto p-6 text-sm text-slate-400">Version 1.0</div>
+      </nav>
     </aside>
   );
 }

@@ -1,28 +1,37 @@
-import { CircleAlert, Wallet, IndianRupee, CheckSquare } from "lucide-react";
+import {
+  Wallet,
+  Bell,
+  CheckCircle2,
+  Utensils,
+} from "lucide-react";
 
 export const stats = [
-    {
-        title: "Complaints",
-        value: "12",
-        color: "bg-red-100",
-        icon: CircleAlert,
-    },
-    {
-        title: "Expenses",
-        value: "1232",
-        color: "bg-green-100",
-        icon: Wallet,
-    },
-    {
-        title: "Rent",
-        value: "4550",
-        color: "bg-yellow-100",
-        icon: IndianRupee,
-    },
-    {
-        title: "Tasks",
-        value: "12",
-        color: "bg-blue-100",
-        icon: CheckSquare,
-    },
+  {
+    id: 1,
+    title: "Monthly Expense",
+    value: "₹7,150",
+    icon: Wallet,
+    color: "#2563EB",
+  },
+  {
+    id: 2,
+    title: "New Notices",
+    value: "4",
+    icon: Bell,
+    color: "#F59E0B",
+  },
+  {
+    id: 3,
+    title: "Completed Tasks",
+    value: "12",
+    icon: CheckCircle2,
+    color: "#16A34A",
+  },
+  {
+    id: 4,
+    title: "Today's Meals",
+    value: "3",
+    icon: Utensils,
+    color: "#9333EA",
+  },
 ];
