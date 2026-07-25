@@ -9,7 +9,7 @@ export const taskPageData = [
         id: 2,
         title: "Complete React Assignment",
         priority: "Medium",
-        completed: true,
+        completed: false,
     },
     {
         id: 3,

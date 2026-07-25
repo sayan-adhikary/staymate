@@ -47,7 +47,7 @@ function Navbar() {
           />
 
           <div className="hidden lg:block">
-            <h3 className="font-semibold text-slate-800">Sayan Das</h3>
+            <h3 className="font-semibold text-slate-800">Sayan Adhikary</h3>
 
             <p className="text-sm text-slate-500">Room B-19</p>
           </div>
