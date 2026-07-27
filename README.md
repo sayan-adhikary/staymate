@@ -8,7 +8,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 
 ## 📸 Project Preview
 
-![alt text](./public/dashboard.png)
+[🎥 Watch the demo](./public/Demo2.mp4)
 
 ---
 
