@@ -8,14 +8,14 @@ StayMate is a modern React-based web application designed to simplify hostel and
 
 ## 📸 Project Preview
 
-> **Add screenshots or a GIF here after deployment**
-
+![alt text](./public/image.png)
 
 ---
 
 ## 🚀 Features
 
 ### 📊 Dashboard
+
 - Hostel overview dashboard
 - Monthly rent summary
 - Expense summary
@@ -28,6 +28,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 🍽️ Food Management
+
 - Daily hostel menu
 - Breakfast, Lunch & Dinner
 - Clean card-based layout
@@ -35,6 +36,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 💰 Rent Management
+
 - Monthly rent details
 - Due date tracking
 - Payment status
@@ -43,6 +45,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 💸 Expense Tracker
+
 - Track monthly expenses
 - Expense summary cards
 - Organized expense categories
@@ -50,6 +53,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 📢 Notice Board
+
 - Important hostel announcements
 - Organized notice cards
 - Easy-to-read interface
@@ -57,6 +61,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 📝 Task Manager
+
 - Daily task list
 - Track pending and completed tasks
 - Simple and clean UI
@@ -64,6 +69,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 🚨 Complaint Management
+
 - View hostel complaints
 - Complaint status
 - Organized complaint cards
@@ -71,6 +77,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### 👤 User Profile
+
 - Personal details
 - Hostel information
 - Profile overview
@@ -78,6 +85,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 ---
 
 ### ⚙️ Settings
+
 - Theme Management
 - Notification Preferences
 - Account Settings
@@ -87,15 +95,15 @@ StayMate is a modern React-based web application designed to simplify hostel and
 
 ## 🛠️ Tech Stack
 
-| Technology | Purpose |
-|------------|---------|
-| React.js | Frontend Framework |
-| React Router DOM | Routing |
-| Tailwind CSS | Styling |
-| Lucide React | Icons |
-| Context API | Theme Management |
-| JavaScript (ES6+) | Logic |
-| Vite | Build Tool |
+| Technology        | Purpose            |
+| ----------------- | ------------------ |
+| React.js          | Frontend Framework |
+| React Router DOM  | Routing            |
+| Tailwind CSS      | Styling            |
+| Lucide React      | Icons              |
+| Context API       | Theme Management   |
+| JavaScript (ES6+) | Logic              |
+| Vite              | Build Tool         |
 
 ---
 
@@ -109,28 +117,45 @@ src/
 │   ├── rent/
 │   ├── complaints/
 │   ├── layout/
-│   └── ...
-│
-├── pages/
-│   ├── Dashboard.jsx
-│   ├── Food.jsx
-│   ├── Rent.jsx
-│   ├── Expenses.jsx
-│   ├── Complaints.jsx
-│   ├── Notice.jsx
-│   ├── Tasks.jsx
-│   ├── Profile.jsx
-│   ├── Settings.jsx
-│   ├── Login.jsx
-│   └── Register.jsx
-│
-├── data/
+│   └── food/
 │
 ├── context/
-│
+|
+├── data/
+│   ├── complaintData.js
+│   ├── expenseData.js
+│   ├── menuData.js
+│   ├── noticeData.js
+│   ├── noticePageData.js
+│   ├── profileData.js
+│   ├── rentData.js
+│   ├── statData.js
+│   ├── taskData.js
+│   └── taskPageData.js
+|
+├──layouts/
+|
+├── pages/
+|   ├── Complaints.jsx
+│   ├── Dashboard.jsx
+│   ├── Expenses.jsx
+│   ├── Food.jsx
+│   ├── Login.jsx
+│   ├── NotFound.jsx
+│   ├── Notice.jsx
+│   ├── Profile.jsx
+|   ├── Register.jsx
+│   ├── Rent.jsx
+│   ├── Settings.jsx
+│   └── Tasks.jsx
+|
+├── routes/
+├── styles/
 ├── App.jsx
 ├── main.jsx
-└── index.css
+├── index.html
+├── package.json
+└── README.md
 ```
 
 ---
@@ -197,31 +222,55 @@ npm run dev
 
 ### Dashboard
 
-_Add Screenshot_
+![alt text](./public/dashboard.png)
 
 ---
 
 ### Food Page
 
-_Add Screenshot_
-
----
-
-### Rent Page
-
-_Add Screenshot_
+![alt text](./public/food.png)
 
 ---
 
 ### Complaint Page
 
-_Add Screenshot_
+![alt text](./public/complains.png)
 
 ---
 
-### Settings
+### Expenses Page
 
-_Add Screenshot_
+![alt text](./public/expenses.png)
+
+---
+
+### Rent Page
+
+![alt text](./public/rent.png)
+
+---
+
+### Notice Page
+
+![alt text](./public/notice.png)
+
+---
+
+### Tasks Page
+
+![alt text](./public/tasks.png)
+
+---
+
+### Profile Page
+
+![alt text](./public/profile.png)
+
+---
+
+### Settings Page
+
+![alt text](./public/settings.png)
 
 ---
 
@@ -253,6 +302,25 @@ This project helped me strengthen my understanding of:
 - Responsive Design
 - Code Reusability
 - Clean UI Development
+
+---
+
+## 🤖 AI Usage
+
+AI was used as a development assistant throughout this project to improve productivity and learning. It helped with:
+
+- Brainstorming project ideas and feature planning
+- Designing the application architecture
+- Generating reusable React component templates
+- Reviewing and refactoring code for better readability
+- Suggesting modern UI/UX improvements
+- Debugging React and JavaScript issues
+- Explaining React concepts and best practices
+- Creating documentation and improving project structure
+
+All implementation decisions, project organization, customization, testing, and integration were completed and verified by me.
+
+This project reflects my understanding of React, component-based architecture, routing, state management, and modern frontend development, with AI serving as a coding assistant rather than a replacement for development.
 
 ---
 
