@@ -8,8 +8,7 @@ StayMate is a modern React-based web application designed to simplify hostel and
 
 ## 📸 Project Preview
 
-[![Watch the Demo](./public/dashboard.png)](https://drive.google.com/file/d/19LOys-pVPuzccDGi63wEchVkOGs8867y/view?usp=sharing)
----
+## [![Watch the Demo](./public/dashboard.png)](https://drive.google.com/file/d/19LOys-pVPuzccDGi63wEchVkOGs8867y/view?usp=sharing)
 
 ## 🚀 Features
 
@@ -320,6 +319,19 @@ AI was used as a development assistant throughout this project to improve produc
 All implementation decisions, project organization, customization, testing, and integration were completed and verified by me.
 
 This project reflects my understanding of React, component-based architecture, routing, state management, and modern frontend development, with AI serving as a coding assistant rather than a replacement for development.
+
+---
+
+## 🧰 Development Tools
+
+- React
+- Vite
+- Tailwind CSS
+- React Router
+- Lucide React
+- Git & GitHub
+- ChatGPT (AI-assisted development)
+- 
 
 ---
 
