@@ -155,7 +155,9 @@ src/
 ├── package.json
 └── README.md
 ```
-
+---
+### Image of the structure
+![alt text](./public/diagram.png)
 ---
 
 ## 🎯 Concepts Used
